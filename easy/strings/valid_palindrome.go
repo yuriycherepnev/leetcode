@@ -1,36 +1,39 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
 func main() {
-	str := "фывйцу"
-	runes := []rune(str)
+	str := "Zeus was deified, saw Suez."
 
-	fmt.Println(len(runes))
+	result := isPalindrome(str)
 
-	count := 0
-	for range str {
-		count++
-	}
-	fmt.Println(count) // 6
-
-	for _, value := range str {
-		if 64 < value && value < 91 {
-			value += 32
-		}
-
-	}
+	fmt.Println(result)
 }
 
-func isPalindrome(str string) {
-	strLength := 0
-	for range str {
-		strLength++
-	}
-	for i, j := 0, strLength; i < j; i, j = i+1, j-1 {
+func isPalindrome(s string) bool {
+	runes := []rune(s)
 
-	}
+	for i, j := 0, len(runes)-1; i < j; {
+		if 'A' <= runes[i] && runes[i] <= 'Z' {
+			runes[i] += 32
+		}
+		if 'A' <= runes[j] && runes[j] <= 'Z' {
+			runes[j] += 32
+		}
 
+		if !((runes[i] >= 'a' && runes[i] <= 'z') || (runes[i] >= '0' && runes[i] <= '9')) {
+			i++
+			continue
+		}
+		if !((runes[j] >= 'a' && runes[j] <= 'z') || (runes[j] >= '0' && runes[j] <= '9')) {
+			j--
+			continue
+		}
+		if runes[i] != runes[j] {
+			return false
+		}
+		i++
+		j--
+	}
+	return true
 }
