@@ -23,26 +23,19 @@ func intersect(nums1 []int, nums2 []int) []int {
 	sort.Ints(nums1)
 	sort.Ints(nums2)
 
-	lengthNums1 := len(nums1)
-	lengthNums2 := len(nums2)
-
 	intSlice := make([]int, 0)
 
 	i, j := 0, 0
-	for lengthNums1 > 0 && lengthNums2 > 0 {
+	for i < len(nums1) && j < len(nums2) {
 		if nums1[i] == nums2[j] {
 			intSlice = append(intSlice, nums1[i])
 			i++
 			j++
-			lengthNums2--
-			lengthNums1--
 		} else {
 			if nums1[i] > nums2[j] {
 				j++
-				lengthNums2--
 			} else {
 				i++
-				lengthNums1--
 			}
 		}
 	}
