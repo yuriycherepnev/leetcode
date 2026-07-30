@@ -21,18 +21,13 @@ type CacheM struct {
 func (c *CacheM) GetOrCreateM(key, value string) string {
 	c.mutex.RLock()
 	v, ok := cacheM[key]
+	c.mutex.RUnlock()
 	if ok {
 		return v
 	}
-	c.mutex.RUnlock()
 
 	c.mutex.Lock()
 	defer c.mutex.Unlock()
-
-	v, ok = cacheM[key]
-	if ok {
-		return v
-	}
 
 	cacheM[key] = value
 	return value
