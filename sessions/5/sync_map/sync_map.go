@@ -10,31 +10,25 @@ import (
 )
 
 func main() {
-	cacheMap := Cache{}
+	cacheMap := Cache[string, string]{}
 	fmt.Println(cacheMap.GetOrCreate("hello", "world"))
 	fmt.Println(cacheMap.Get("hello"))
 }
 
-type Cache struct {
+type Cache[K comparable, V any] struct {
 	cacheMap sync.Map
 }
 
-// GetOrCreate проверяет, существует ли ключ.
-// Если он не существует, создается новое значение.
-func (c *Cache) GetOrCreate(key, value string) string {
-	store, _ := c.cacheMap.LoadOrStore(key, value)
-	actual, ok := store.(string)
-	if !ok {
-		panic("cache value is not string")
-	}
-	return actual
+func (c *Cache[K, V]) GetOrCreate(key, value string) (V, bool) {
+	store, ok := c.cacheMap.LoadOrStore(key, value)
+	return store.(V), ok
 }
 
-func (c *Cache) Get(key string) string {
-	v, _ := c.cacheMap.Load(key) // c.CacheM.Load(key)
-	actual, ok := v.(string)
-	if !ok {
-		panic("cache value is not string")
+func (c *Cache[K, V]) Get(key string) (V, bool) {
+	v, ok := c.cacheMap.Load(key)
+	if ok {
+		return v.(V), true
 	}
-	return actual
+	var zero V
+	return zero, false
 }
