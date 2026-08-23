@@ -1,6 +1,7 @@
 /*
-Given an integer array nums, return true if any value appears at least twice in the array,
-and return false if every element is distinct.
+Дан целочисленный массив nums.
+Верните true, если какое-либо значение встречается в массиве как минимум дважды,
+и false, если все элементы различны.
 
 Input: nums = [1,2,3,1]
 Output: true
