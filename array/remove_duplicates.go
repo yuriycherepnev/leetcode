@@ -9,8 +9,10 @@ import "fmt"
 
 func main() {
 	nums := []int{0, 1, 2, 2, 2, 2, 3, 3, 4}
-	removeDuplicates(nums)
+	index := removeDuplicates(nums)
 	fmt.Println(nums)
+
+	fmt.Println(index)
 }
 
 func removeDuplicates(nums []int) int {
