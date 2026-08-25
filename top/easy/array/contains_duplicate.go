@@ -1,7 +1,6 @@
 /*
-Дан целочисленный массив nums.
-Верните true, если какое-либо значение встречается в массиве как минимум дважды,
-и false, если все элементы различны.
+Верните true, если есть дубли
+и false, если нет.
 
 Input: nums = [1,2,3,1]
 Output: true
@@ -20,13 +19,14 @@ func main() {
 }
 
 func containsDuplicate(nums []int) bool {
-	keyNumbers := make(map[int]bool)
+	keyNumbers := make(map[int]struct{})
 
 	for _, value := range nums {
-		if keyNumbers[value] {
+		_, exist := keyNumbers[value]
+		if exist {
 			return true
 		}
-		keyNumbers[value] = true
+		keyNumbers[value] = struct{}{}
 	}
 	return false
 }

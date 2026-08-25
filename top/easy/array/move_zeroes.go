@@ -1,17 +1,19 @@
 /*
-Given an integer array nums, move all 0's to the end of it while maintaining the relative order of the non-zero elements.
-Note that you must do this in-place without making a copy of the array.
+Нули переместить в конец,
+сохраняя порядок ненулевых элементов
 */
 
 package main
 
+import "fmt"
+
 func main() {
 	digits := []int{2, 1, 0, 3, 0, 12, 9, 67}
-
-	moveZeroes(digits)
+	move := moveZeroes(digits)
+	fmt.Println(move)
 }
 
-func moveZeroes(nums []int) {
+func moveZeroes(nums []int) []int {
 	zeroIndex := 0
 
 	for i := 0; i < len(nums); i++ {
@@ -20,4 +22,6 @@ func moveZeroes(nums []int) {
 			zeroIndex++
 		}
 	}
+
+	return nums
 }
