@@ -11,8 +11,8 @@ func main() {
 	nums := []int{0, 1, 2, 2, 2, 2, 3, 3, 4}
 	index := removeDuplicates(nums)
 	fmt.Println(nums)
-
-	fmt.Println(index)
+	cutNums := nums[:index:index]
+	fmt.Println(len(cutNums), cap(cutNums))
 }
 
 func removeDuplicates(nums []int) int {
