@@ -5,7 +5,6 @@ package main
 
 import (
 	"fmt"
-	"sort"
 )
 
 func main() {
@@ -17,9 +16,6 @@ func main() {
 	fmt.Println(result)
 }
 
-/*
-решение через мапы
-*/
 func mapIntersect(nums1 []int, nums2 []int) []int {
 	mapNums := make(map[int]int)
 
@@ -35,31 +31,4 @@ func mapIntersect(nums1 []int, nums2 []int) []int {
 		}
 	}
 	return result
-}
-
-/*
-решение через сортировку слайсов
-*/
-func sortIntersect(nums1 []int, nums2 []int) []int {
-	sort.Ints(nums1)
-	sort.Ints(nums2)
-
-	intSlice := make([]int, 0)
-
-	i, j := 0, 0
-	for i < len(nums1) && j < len(nums2) {
-		if nums1[i] == nums2[j] {
-			intSlice = append(intSlice, nums1[i])
-			i++
-			j++
-		} else {
-			if nums1[i] > nums2[j] {
-				j++
-			} else {
-				i++
-			}
-		}
-	}
-
-	return intSlice
 }
