@@ -8,20 +8,6 @@ func main() {
 	fmt.Println(single)
 }
 
-// оба варианта решения верны
-// решение через XOR
-func singleNumber(nums []int) int {
-	number := 0
-
-	for _, value := range nums {
-		number = number ^ value
-	}
-
-	return number
-}
-
-// решение через map
-/*
 func singleNumber(nums []int) int {
 	numbers := make(map[int]struct{})
 	result := 0
@@ -40,4 +26,15 @@ func singleNumber(nums []int) int {
 	}
 	return result
 }
-*/
+
+// оба варианта решения верны
+// решение через XOR
+func singleNumberXOR(nums []int) int {
+	number := 0
+
+	for _, value := range nums {
+		number = number ^ value
+	}
+
+	return number
+}
