@@ -1,14 +1,12 @@
 /*
-Найти K самых часто встречающихся элементов.
+Найти K самых часто встречающихся элементов
 */
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
 func main() {
-	nums := []int{1, 1, 1}
+	nums := []int{1, 1, 6, 6, 6, 6}
 	k := 2
 	top := topKFrequent(nums, k)
 	fmt.Println(top)
@@ -42,7 +40,6 @@ func topKFrequent(nums []int, k int) []int {
 	return result
 }
 
-// решение через мапу
 func topKFrequentMap(nums []int, k int) []int {
 	mapNums := make(map[int]int)
 
