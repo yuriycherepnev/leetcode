@@ -1,3 +1,6 @@
+/*
+найти вхождение строк
+*/
 package main
 
 import "fmt"

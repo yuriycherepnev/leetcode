@@ -1,9 +1,5 @@
 /*
-A phrase is a palindrome if, after converting all uppercase letters into lowercase letters and
-removing all non-alphanumeric characters,it reads the same forward and backward.
-Alphanumeric characters include letters and numbers.
-
-Given a string s, return true if it is a palindrome, or false otherwise.
+is valid palindrome
 */
 
 package main
@@ -18,7 +14,7 @@ func main() {
 	fmt.Println(result)
 }
 
-func isPalindrome(s string) bool {
+func isValidPalindrome(s string) bool {
 	runes := []rune(s)
 
 	for i, j := 0, len(runes)-1; i < j; {
