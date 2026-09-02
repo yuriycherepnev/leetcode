@@ -7,10 +7,8 @@ import (
 	"fmt"
 )
 
-const MaxInt = 2147483647
-
 func main() {
-	number := -123456789
+	number := 123456789
 	newNumber := reverseInteger(number)
 	fmt.Println(newNumber)
 }
@@ -21,9 +19,15 @@ func reverseInteger(x int) int {
 		remainder := x % 10
 		x /= 10
 		reversed = reversed*10 + remainder
-		if reversed > MaxInt || reversed < -MaxInt {
-			return 0
-		}
 	}
 	return reversed
 }
+
+/*
+проверка на диапазон
+
+const MaxInt = 2147483647
+if reversed > MaxInt || reversed < -MaxInt {
+			return 0
+		}
+*/
