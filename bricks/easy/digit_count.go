@@ -9,7 +9,8 @@ func main() {
 
 func digitCount(number int) int {
 	count := 0
-	for temp := number; temp != 0; temp /= 10 {
+	for number > 0 {
+		number /= 10
 		count++
 	}
 	return count
