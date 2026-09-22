@@ -11,9 +11,9 @@ package main
 import "fmt"
 
 func main() {
-	nums := []int{1, 2, 3, 1}
+	dNums := []int{1, 2, 3, 1}
 
-	duplicates := containsDuplicate(nums)
+	duplicates := containsDuplicate(dNums)
 
 	fmt.Println(duplicates)
 }
