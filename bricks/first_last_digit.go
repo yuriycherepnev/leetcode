@@ -14,7 +14,8 @@ func main() {
 func firstDigit(number int) int {
 	divider := 1
 	for temp := number / 10; temp != 0; temp /= 10 {
-		divider *= 10
+
+		divider = divider * 10
 	}
 	return number / divider
 }

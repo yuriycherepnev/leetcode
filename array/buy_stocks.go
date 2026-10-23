@@ -17,12 +17,10 @@ func main() {
 
 func maxProfit(prices []int) int {
 	profit := 0
-	buy := 0
 
 	for i := 0; i < len(prices)-1; i++ {
-		if prices[i] < prices[i+1] {
-			buy = prices[i]
-			profit += prices[i+1] - buy
+		if prices[i] > prices[i+1] {
+			profit += prices[i] - prices[i+1]
 		}
 	}
 	return profit
