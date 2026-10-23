@@ -19,14 +19,13 @@ func main() {
 }
 
 func containsDuplicate(nums []int) bool {
-	keyNumbers := make(map[int]struct{})
-
-	for _, value := range nums {
-		_, exist := keyNumbers[value]
+	duplicates := make(map[int]struct{})
+	for _, v := range nums {
+		_, exist := duplicates[v]
 		if exist {
 			return true
 		}
-		keyNumbers[value] = struct{}{}
+		duplicates[v] = struct{}{}
 	}
 	return false
 }
