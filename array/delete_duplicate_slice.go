@@ -16,11 +16,10 @@ func deleteDouble(numbers []int) []int {
 	x := 0
 
 	for _, value := range numbers {
-		_, ok := mapNums[value]
-		if ok {
+		_, exist := mapNums[value]
+		if exist {
 			continue
 		}
-
 		mapNums[value] = struct{}{}
 		numbers[x] = value
 		x++
