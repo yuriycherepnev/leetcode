@@ -3,8 +3,8 @@ package main
 import "fmt"
 
 func main() {
-	one := []int{1, 2, 3, 4, 5, 6}
-	two := []int{1, 2, 3, 4, 5, 6, 7, 8, 9}
+	one := []int{2, 10, 20, 30, 40, 50, 60}
+	two := []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 100}
 
 	merged := merge(one, two)
 
@@ -16,7 +16,7 @@ func merge(nums1, nums2 []int) []int {
 	i, j := 0, 0
 
 	for i < len(nums1) && j < len(nums2) {
-		if nums1[i] <= nums2[j] {
+		if nums1[i] < nums2[j] {
 			result = append(result, nums1[i])
 			i++
 		} else {
