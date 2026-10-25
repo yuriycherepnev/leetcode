@@ -19,14 +19,14 @@ func isAnagram(s, t string) bool {
 		return false
 	}
 
-	count := make(map[rune]int)
+	mapRunes := make(map[rune]int)
 
 	for i := range sRunes {
-		count[sRunes[i]]++
-		count[tRunes[i]]--
+		mapRunes[sRunes[i]]++
+		mapRunes[tRunes[i]]--
 	}
 
-	for _, value := range count {
+	for _, value := range mapRunes {
 		if value != 0 {
 			return false
 		}
