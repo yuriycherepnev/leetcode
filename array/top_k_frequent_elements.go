@@ -7,7 +7,7 @@ import "fmt"
 
 func main() {
 	fNums := []int{1, 1, 6, 6, 6, 6, 8, 8, 8, 8, 2, 2}
-	k := 2
+	k := 3
 	top := topKFrequent(fNums, k)
 	fmt.Println(top)
 }
