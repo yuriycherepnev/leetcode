@@ -8,11 +8,10 @@ package main
 import "fmt"
 
 func main() {
-	nums := []int{0, 1, 2, 2, 2, 2, 3, 3, 4}
-	index := removeDuplicates(nums)
-	fmt.Println(nums)
-	cutNums := nums[:index:index]
-	fmt.Println(len(cutNums), cap(cutNums))
+	rNums := []int{0, 1, 2, 2, 2, 2, 3, 3, 4}
+	index := removeDuplicates(rNums)
+	cutNums := rNums[:index:index]
+	fmt.Println(cutNums)
 }
 
 func removeDuplicates(nums []int) int {
