@@ -7,10 +7,15 @@ package main
 import "fmt"
 
 func main() {
-	numbers := []int{1, 2, 3}
+	numbers := []int{1, 2, 3, 4, 5}
 	result := multiOther(numbers)
 	fmt.Println(result)
 }
+
+/*
+[1 1 2 6 24]
+[120 60 40 30 24]
+*/
 
 func multiOther(nums []int) []int {
 	result := make([]int, len(nums))
