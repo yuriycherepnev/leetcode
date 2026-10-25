@@ -24,3 +24,12 @@ func plusOne(digits []int) []int {
 	result[0] = 1
 	return result
 }
+
+// если нужна конвертация к инту
+func convertToInt(digits []int) int {
+	number := 0
+	for _, v := range digits {
+		number = number*10 + v
+	}
+	return number
+}
