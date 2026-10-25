@@ -6,9 +6,9 @@ package main
 import "fmt"
 
 func main() {
-	nums := []int{1, 1, 6, 6, 6, 6}
+	fNums := []int{1, 1, 6, 6, 6, 6, 8, 8, 8, 8, 2, 2}
 	k := 2
-	top := topKFrequent(nums, k)
+	top := topKFrequent(fNums, k)
 	fmt.Println(top)
 }
 
@@ -20,7 +20,7 @@ func topKFrequent(nums []int, k int) []int {
 		mapNums[number]++
 	}
 
-	frequentNums := make([][]int, len(nums)+1)
+	frequentNums := make([][]int, len(nums))
 
 	for number, count := range mapNums {
 		frequentNums[count] = append(frequentNums[count], number)
