@@ -10,9 +10,9 @@ package main
 import "fmt"
 
 func main() {
-	nums := []int{1, 2, 3, 4, 5, 6, 7, 8}
-	rotateArray(nums, 9)
-	fmt.Println(nums)
+	rNums := []int{1, 2, 3, 4, 5, 6, 7, 8}
+	rotateArray(rNums, 3)
+	fmt.Println(rNums)
 }
 
 func rotateArray(nums []int, k int) {

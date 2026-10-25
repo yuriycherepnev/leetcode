@@ -8,9 +8,9 @@ package main
 import "fmt"
 
 func main() {
-	rNums := []int{0, 1, 2, 2, 2, 2, 3, 3, 4}
-	index := removeDuplicates(rNums)
-	cutNums := rNums[:index:index]
+	dNums := []int{0, 1, 2, 2, 2, 2, 3, 3, 4}
+	index := removeDuplicates(dNums)
+	cutNums := dNums[:index:index]
 	fmt.Println(cutNums)
 }
 
