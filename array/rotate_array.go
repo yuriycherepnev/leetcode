@@ -11,7 +11,7 @@ import "fmt"
 
 func main() {
 	rNums := []int{1, 2, 3, 4, 5, 6, 7, 8}
-	rotateArray(rNums, 3)
+	reverseArray(rNums, 3)
 	fmt.Println(rNums)
 }
 
@@ -35,8 +35,11 @@ func reverseArray(nums []int, k int) {
 	k = k % length
 
 	reverse(nums, 0, length-1)
+	fmt.Println(nums)
 	reverse(nums, 0, k-1)
+	fmt.Println(nums)
 	reverse(nums, k, length-1)
+	fmt.Println(nums)
 }
 
 func reverse(nums []int, start, end int) {
