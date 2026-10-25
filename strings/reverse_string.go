@@ -3,14 +3,24 @@
 */
 package main
 
+import "fmt"
+
 func main() {
 	str := "Hello"
-	bytes := []byte(str)
-	reverseString(bytes)
+	reverse := reverseString(str)
+	fmt.Println(reverse)
 }
 
-func reverseString(s []byte) {
-	for i, j := 0, len(s)-1; i < j; i, j = i+1, j-1 {
-		s[i], s[j] = s[j], s[i]
+func reverseString(s string) string {
+	sRunes := []rune(s)
+	left := 0
+	right := len(s) - 1
+
+	for left < right {
+		sRunes[left], sRunes[right] = sRunes[right], sRunes[left]
+		left++
+		right--
 	}
+
+	return string(sRunes)
 }
