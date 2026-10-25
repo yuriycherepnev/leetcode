@@ -3,19 +3,18 @@ package main
 import "fmt"
 
 func main() {
-	str := "ZeussueZ"
-
+	str := "ВeussueВ"
 	result := isPalindrome(str)
-
 	fmt.Println(result)
 }
 
 func isPalindrome(s string) bool {
+	sRunes := []rune(s)
 	left := 0
-	right := len(s) - 1
+	right := len(sRunes) - 1
 
 	for left < right {
-		if s[left] != s[right] {
+		if sRunes[left] != sRunes[right] {
 			return false
 		}
 		left++
