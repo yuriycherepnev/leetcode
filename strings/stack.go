@@ -9,10 +9,10 @@ func main() {
 }
 
 func removeStars(s string) string {
-	slStr := []rune(s)
-	stack := make([]rune, 0, cap(slStr))
+	sRunes := []rune(s)
+	stack := make([]rune, 0, len(sRunes))
 
-	for _, value := range slStr {
+	for _, value := range sRunes {
 		if value == '*' {
 			stack = stack[:len(stack)-1]
 			continue
