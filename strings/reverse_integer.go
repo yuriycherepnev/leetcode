@@ -16,9 +16,9 @@ func main() {
 func reverseInteger(x int) int {
 	reversed := 0
 	for x != 0 {
-		remainder := x % 10
-		x /= 10
-		reversed = reversed*10 + remainder
+		digit := x % 10
+		x = x / 10
+		reversed = reversed*10 + digit
 	}
 	return reversed
 }
