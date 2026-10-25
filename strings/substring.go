@@ -6,19 +6,16 @@ package main
 import "fmt"
 
 func main() {
-	haystack := "mississippi"
-	needle := "issip"
-
+	haystack := "mississipаpi"
+	needle := "issipа"
 	number := strStr(haystack, needle)
-
 	fmt.Println(number)
 }
 
 func strStr(haystack string, needle string) int {
-	hLen := len(haystack)
-	nLen := len(needle)
-	for i := 0; i <= hLen-nLen; i++ {
-		if haystack[i:i+nLen] == needle {
+	needLen := len(needle)
+	for i := 0; i <= len(haystack)-needLen; i++ {
+		if haystack[i:i+needLen] == needle {
 			return i
 		}
 	}
