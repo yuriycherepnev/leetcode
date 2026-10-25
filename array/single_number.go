@@ -3,8 +3,8 @@ package main
 import "fmt"
 
 func main() {
-	nums := []int{2, 1, 4, 1, 2}
-	single := singleNumber(nums)
+	sNums := []int{2, 1, 4, 1, 2}
+	single := singleNumber(sNums)
 	fmt.Println(single)
 }
 
@@ -13,8 +13,8 @@ func singleNumber(nums []int) int {
 	result := 0
 
 	for _, num := range nums {
-		_, ok := numbers[num]
-		if !ok {
+		_, exist := numbers[num]
+		if !exist {
 			numbers[num] = struct{}{}
 		} else {
 			delete(numbers, num)
