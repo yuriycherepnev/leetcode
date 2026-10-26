@@ -47,7 +47,7 @@ func solve(seats []int) int {
 }
 
 func main() {
-	fmt.Println(solve([]int{1, 0, 1, 0, 0}))                   // 2
+	fmt.Println(solve([]int{0, 0, 0, 1, 0}))                   // 2
 	fmt.Println(solve([]int{1, 0, 0, 0, 0, 1}))                // 2
 	fmt.Println(solve([]int{1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1})) // 2
 	fmt.Println(solve([]int{1, 0, 1, 0}))                      // 1
