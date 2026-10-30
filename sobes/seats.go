@@ -21,6 +21,27 @@ package main
 
 import "fmt"
 
+/*
+без корнер кейсов
+
+	func solve(seats []int) int {
+		left := -1
+		maxDist := 0
+
+		for right, v := range seats {
+			if v != 0 {
+				dist := (right - left) / 2
+				if dist > maxDist {
+					maxDist = dist
+				}
+				left = right
+			}
+		}
+
+		return maxDist
+	}
+*/
+
 func solve(seats []int) int {
 	left := -1
 	maxDist := 0
@@ -52,24 +73,3 @@ func main() {
 	fmt.Println(solve([]int{1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1})) // 2
 	fmt.Println(solve([]int{1, 0, 1, 0}))                      // 1
 }
-
-/*
-без корнер кейсов
-
-func solve(seats []int) int {
-	left := -1
-	maxDist := 0
-
-	for right, v := range seats {
-		if v != 0 {
-			dist := (right - left) / 2
-			if dist > maxDist {
-				maxDist = dist
-			}
-			left = right
-		}
-	}
-
-	return maxDist
-}
-*/
